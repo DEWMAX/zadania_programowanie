@@ -25,6 +25,14 @@ public class Main {
         me.GoForWalk();
         System.out.println(me.species);
         System.out.println(me.weight);
+        System.out.println(fiat.getAge());
 
+        Animal cat1 = new Animal("felis");
+
+        fiat.turnOn();
+        fiat.isTurnedOn();
+        firstPhone.turnOn();
+        firstPhone.isTurnedOn();
     }
+
 }

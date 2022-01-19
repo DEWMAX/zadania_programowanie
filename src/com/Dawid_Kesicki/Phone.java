@@ -24,4 +24,17 @@ public class Phone extends Device{
         ", totalStorage=" + totalStorage +
                 '}';
     }
+
+    public void turnOn(){
+        System.out.println("wciskam guzik");
+        System.out.println("czekam");
+        System.out.println("czekam");
+        System.out.println("czekam");
+        System.out.println("o jest, logo");
+    }
+
+    public boolean isTurnedOn(){
+        return true;
+    }
+
 }

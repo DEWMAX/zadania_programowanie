@@ -1,6 +1,6 @@
 package com.Dawid_Kesicki;
 
-public class Device {
+abstract public class Device {
 
     String producer;
     String model;
@@ -14,6 +14,12 @@ public class Device {
         this.colour = colour;
     }
 
+    public Integer getAge(){
+        return 2021 - yearOfProduction;
+    }
 
+    public abstract void turnOn();
+
+    public abstract boolean isTurnedOn();
 }
 
