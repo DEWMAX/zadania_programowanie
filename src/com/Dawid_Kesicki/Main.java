@@ -1,12 +1,18 @@
 package com.Dawid_Kesicki;
 
+import creature.Animal;
+import creature.Feedable;
+import creature.Pet;
+
+import java.time.chrono.HijrahChronology;
+
 public class Main {
 
     public static void main(String[] args) {
 
 
-        Animal dog = new Animal("Burek");
-        Animal cat = new Animal("Marek");
+        Pet dog = new Pet("Burek");
+        Pet cat = new Pet("Marek");
 
         Car fiat = new Car("Fiat", "Bravo", 2016, "Black", 3.0);
         Car passerati = new Car("VW", "Passat", 2004, "Black", 3.0);
@@ -28,7 +34,7 @@ public class Main {
         System.out.println(h1.weight);
         System.out.println(fiat.getAge());
 
-        Animal cat1 = new Animal("felis");
+        Pet cat1 = new Pet("felis");
 
         fiat.turnOn();
         fiat.isTurnedOn();
@@ -48,4 +54,7 @@ public class Main {
         cat1.sale(h1, brotherInLow, 100000000.0);
         h1.sale(h1, brotherInLow, 80000.0);
     }
+
+
+
 }

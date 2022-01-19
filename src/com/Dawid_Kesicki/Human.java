@@ -1,6 +1,9 @@
 package com.Dawid_Kesicki;
 
-public class Human extends Animal{
+import creature.Animal;
+import creature.Edbile;
+
+public class Human extends Animal {
     String firstName;
     String lastName;
     private Double salary;
@@ -8,7 +11,7 @@ public class Human extends Animal{
     public Double cash;
     public Car car;
     Phone phone;
-    Animal pet;
+    public Animal pet;
     Human h1;
 
     public Double getSalary(){
