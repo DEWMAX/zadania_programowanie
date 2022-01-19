@@ -1,6 +1,6 @@
 package com.Dawid_Kesicki;
 
-abstract public class Device {
+abstract public class Device implements Saleable {
 
     String producer;
     String model;
