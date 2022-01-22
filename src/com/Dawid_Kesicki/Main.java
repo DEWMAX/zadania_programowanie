@@ -5,6 +5,8 @@ import creature.Feedable;
 import creature.Pet;
 
 import java.time.chrono.HijrahChronology;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -28,7 +30,7 @@ public class Main {
         System.out.println(h1.getSalary());
 
 
-        h1.Feed();
+        h1.feed();
         h1.GoForWalk();
         System.out.println(h1.species);
         System.out.println(h1.weight);
@@ -53,6 +55,13 @@ public class Main {
         firstPhone.sale(h1, brotherInLow, 30000.0);
         cat1.sale(h1, brotherInLow, 100000000.0);
         h1.sale(h1, brotherInLow, 80000.0);
+
+
+        List<String> apps = new ArrayList<>();
+        apps.add("fb");
+        apps.add("gmail");
+        apps.add("instagram");
+        firstPhone.installAnApp("fb");
     }
 
 

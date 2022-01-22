@@ -5,6 +5,7 @@ import com.Dawid_Kesicki.Saleable;
 import creature.Edbile;
 
 public abstract class Animal implements Saleable, Edbile {
+    public Double DEFAULTT_FOOD_WEIGHT = 1.0;
     public String species;
     private boolean canFly;
     private int legs;
@@ -19,7 +20,11 @@ public abstract class Animal implements Saleable, Edbile {
         this.weight = weight;
     }
 
-    public void Feed() {
+    public void feed(){
+        this.feed(DEFAULTT_FOOD_WEIGHT);
+    }
+
+    public void feed(Double foodWeigght) {
         if(!this.isAlive) {
             System.out.println("Nie mozesz nakarmic martwego zwierzaka, halo policja!!");
             return;
