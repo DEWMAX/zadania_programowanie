@@ -16,9 +16,9 @@ public class Main {
         Pet dog = new Pet("Burek");
         Pet cat = new Pet("Marek");
 
-        Car fiat = new Car("Fiat", "Bravo", 2016, "Black", 3.0);
-        Car passerati = new Car("VW", "Passat", 2004, "Black", 3.0);
-        Car firstCar = new Car("Porshe", "911", 2004, "Black", 3.0);
+        LPG fiat = new LPG("Fiat", "Bravo", 2016, "Black", 3.0);
+        Disel passerati = new Disel("VW", "Passat", 2004, "Black", 3.0);
+        Electric firstCar = new Electric("Porshe", "911", 2004, "Black", 3.0);
 
         Phone firstPhone = new Phone("Apple", "iPhone 11", 2020, "Black", 8, 64);
 

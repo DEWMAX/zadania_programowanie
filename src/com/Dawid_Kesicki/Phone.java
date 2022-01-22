@@ -6,10 +6,15 @@ import java.util.List;
 
 public class Phone extends Device implements Saleable{
 
-    private static final String DEFAULT_APP_SERVER = "https://www.appstore.com/apps";
+    static final String DEFAULT_APP_SERVER = "https://www.appstore.com/apps";
+    static final int DEFAULT_PROTOCOL = 25565;
+    static final String DEFAULT_VERSION_NAME = "my app";
     final int ram;
     final String ramText;
     int totalStorage;
+
+
+
 
     String DEFAULT_APP_VERSION = "1.0";
 
