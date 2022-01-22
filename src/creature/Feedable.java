@@ -7,7 +7,7 @@ public interface Feedable {
 
 
 
-    void feed(int foodWeight);
+    void feed(Double foodWeight);
 
 
 }

@@ -8,6 +8,12 @@ public class FarmAnimal extends Animal implements Edbile{
         super(species);
     }
 
+    void setBeEaten(){
+        this.isAlive = false;
+        this.weight = 0.0;
+        System.out.println(this.species + "was eaten");
+    }
+
     @Override
     public void beEaten(Animal animal) {
         if(beEaten == false){

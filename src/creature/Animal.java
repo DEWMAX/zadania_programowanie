@@ -8,7 +8,7 @@ public abstract class Animal implements Saleable, Edbile {
     public String species;
     private boolean canFly;
     private int legs;
-    private boolean isAlive;
+    public boolean isAlive;
     public double weight;
 
     public Animal(String species) {
