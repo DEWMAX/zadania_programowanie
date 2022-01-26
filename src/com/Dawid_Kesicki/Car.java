@@ -27,13 +27,15 @@ public abstract class Car extends Device implements Saleable{
     public void sale(Human seller, Human buyer, Double price){
         if(buyer.cash < price){
             System.out.println("Sorry, nie masz kasy");
-        } else if (seller.car != this){
+        } else if (seller.hasCar(this)){
             System.out.println("Sorry, ale nie masz samochodu");
-        } else {
+        }else if(!buyer.hasFreeSpace){}
+
+        else {
             seller.cash += price;
             buyer.cash -= price;
-            seller.car = null;
-            buyer.car = this;
+            seller.removeCar(this);
+            buyer.addCar(this);
             System.out.println("Udało się sprzedać auto za " + price + " pln");
         }
     }

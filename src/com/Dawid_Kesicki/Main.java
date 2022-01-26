@@ -5,8 +5,7 @@ import creature.Feedable;
 import creature.Pet;
 
 import java.time.chrono.HijrahChronology;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
@@ -62,6 +61,43 @@ public class Main {
         apps.add("gmail");
         apps.add("instagram");
         firstPhone.installAnApp("fb");
+
+
+        Integer[] numbers = {2, 1, 3, 2};
+        String[] days = {"pn", "wt", "śr", "czw"};
+        Integer[] otherNumbers = new Integer[4];
+        otherNumbers[0] = 2;
+        otherNumbers[1] = 1;
+        otherNumbers[2] = 3;
+        otherNumbers[3] = 2;
+
+        List<Integer> listOfNumbers = new LinkedList<>();
+        listOfNumbers.add(2);
+        listOfNumbers.add(1);
+        listOfNumbers.add(15);
+
+        Human[] family = new Human[5];
+        family[0] = h1;
+        family[1] = h1;
+        family[2] = brotherInLow;
+        System.out.println();
+
+        List<Human> otherFamily = new LinkedList<>();
+        otherFamily.add(h1);
+        otherFamily.add(brotherInLow);
+        otherFamily.add(h1);
+        System.out.println(otherFamily.size());
+
+
+        Set<Human> anotherFamily = new HashSet<>();
+        anotherFamily.add(h1);
+        anotherFamily.add(h1);
+        anotherFamily.add(h1);
+        anotherFamily.add(h1);
+        anotherFamily.add(brotherInLow);
+        System.out.println(anotherFamily.size());
+
+
     }
 
 
