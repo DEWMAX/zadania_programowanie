@@ -1,5 +1,7 @@
 package creature;
 
+import com.Dawid_Kesicki.Human;
+
 public class FarmAnimal extends Animal implements Edbile{
 
     boolean beEaten = false;
@@ -21,5 +23,10 @@ public class FarmAnimal extends Animal implements Edbile{
         }else {
             System.out.println("JADALNE");
         }
+    }
+
+    @Override
+    public void Sale(Human seller, Human buyer, Double price) {
+
     }
 }

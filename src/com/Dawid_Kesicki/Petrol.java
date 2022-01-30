@@ -1,7 +1,7 @@
 package com.Dawid_Kesicki;
 
-public class Disel extends Car{
-    public Disel(String producer, String model, int yearOfProduction, String colour) {
+public class Petrol extends Car{
+    public Petrol(String producer, String model, int yearOfProduction, String colour) {
         super(producer, model, yearOfProduction, colour);
     }
 

@@ -62,6 +62,11 @@ public class Phone extends Device implements Saleable{
         }
     }
 
+    @Override
+    public void Sale(Human seller, Human buyer, Double price) {
+
+    }
+
     public void installAnApp(List<String> appNames){
 for(String appName : appNames){
     this.installAnApp(appName);
