@@ -2,7 +2,9 @@ package com.Dawid_Kesicki;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.List;
+import java.util.*;
+
+import com.Dawid_Kesicki.*;
 
 public class Phone extends Device implements Saleable{
 
@@ -13,7 +15,7 @@ public class Phone extends Device implements Saleable{
     final String ramText;
     int totalStorage;
 
-
+    public List<Application> appList;
 
 
     String DEFAULT_APP_VERSION = "1.0";
@@ -24,6 +26,7 @@ public class Phone extends Device implements Saleable{
         this.ram = ram;
         this.totalStorage = totalStorage;
         this.ramText = ram + "GB";
+        this.appList = new ArrayList<>();
     }
 
     @Override
@@ -87,22 +90,99 @@ this.installAnApp(appName, version, DEFAULT_APP_SERVER);
         System.out.println("instalowania aplikacji wg nazwy: "+appName + " i wersji: "+ version + " i serwera: " + server);
         try {
             URL url = new URL("https", server, 443, appName + "-" + version);
-            this.installAnApp(url);
+            //this.installAnApp(url);
         } catch (MalformedURLException e) {
             System.out.println("nie udało się zainstalować aplikacji");
             e.printStackTrace();
         }
     }
 
+    public void installAnApp(Human human, Application appName){
+        if(human.cash > appName.appPrice){
+            if(appList.contains(appName)){
+                System.out.println("Ta aplikacja jest juz zainstalowana - " + appName.appName);
+            }else{
+                appList.add(appName);
+                human.cash -= appName.appPrice;
+                System.out.println("sprawdzanie adresu docelowego");
+                System.out.println("sprawdzanie rozmiaru aplikacji");
+                System.out.println("sprawdzanie miejsca na telefonie");
+                System.out.println("obsługa płatności");
+                System.out.println("pobieranie aplikacji");
+                System.out.println("rozpakowanie aplikacji");
+                System.out.println("instalacja " + appName.appName);
+                appName.appInstalled = true;
+            }
+        }
+    }
 
 
-    public void installAnApp(URL url){
-        System.out.println("sprawdzanie adresu docelowego");
-        System.out.println("sprawdzanie rozmiaru aplikacji");
-        System.out.println("sprawdzanie miejsca na telefonie");
-        System.out.println("obsługa płatności");
-        System.out.println("pobieranie aplikacji");
-        System.out.println("rozpakowanie aplikacji");
-        System.out.println("instalacja");
+    public boolean appInstalled(Application appName){
+        return appName.appInstalled;
+    }
+    public boolean appIsInstalled(String appName){
+        for (Application app: appList) {
+            if(Objects.equals(app.appName, appName) && app.appInstalled){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void freeApps(){
+        System.out.println("darmowe aplikacje: ");
+        int counter = 0;
+        for (Application app:appList) {
+            if(app.appPrice == 0.0){
+                System.out.println("1) " + app);
+                counter += 1;
+            }
+        }
+        if(counter == 0){
+            System.out.println("brak darmowych aplikacji!");
+        }
+    }
+
+    public Double valueInstalledApps(){
+        double value = 0.0;
+        for (Application app:appList) {
+            if(app.appInstalled){
+                value += app.appPrice;
+            }
+        }
+        return value;
+    }
+
+
+    public void InstalledApps(){
+        System.out.println("aplikacje posortowane alfabetycznie: ");
+        String[] tempNames = new String[appList.size()];
+        int x = 0;
+        for (Application app:appList) {
+            if(app.appInstalled){
+                tempNames[x] = app.appName;
+                x += 1;
+            }
+        }
+        Arrays.sort(tempNames);
+        for(int i = 0; i < tempNames.length; i ++){
+            System.out.println(i+1 + " " + tempNames[i]);
+        }
+    }
+
+    public void allInstalledApp(){
+        Double[] tempPrices = new Double[appList.size()];
+        System.out.println("aplikacje posortowane od najtańszej do najdroższej: ");
+        int x = 0;
+        for (Application app:appList) {
+            if(app.appInstalled){
+                tempPrices[x] = app.appPrice;
+                x += 1;
+            }
+        }
+        Arrays.sort(tempPrices);
+        for(int i = 0; i < tempPrices.length; i ++){
+            System.out.println(i+1 + ") " + tempPrices[i]);
+        }
     }
 }

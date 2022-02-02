@@ -16,11 +16,8 @@ public class Main {
         Pet dog = new Pet("Burek");
         Pet cat = new Pet("Marek");
 */
-        Petrol mazda = new Petrol("Mazda", "RX-8", 2009, "Black");
-        LPG fiat = new LPG("Fiat", "Bravo", 2016, "Black");
-        Disel vw = new Disel("VW", "Passat", 2004, "Red");
-        Electric tesla = new Electric("Tesla", "S", 2020, "Blue");
-
+        Phone iPhone = new Phone("Apple", "iPhone 11", 2020, "Black", 8, 64);
+        Phone siajomi = new Phone("Xiaomi", "MI 9 T", 2018, "Blue", 4, 64);
 
         Human Dawid = new Human();
         Dawid.firstName = "Dawid";
@@ -30,14 +27,36 @@ public class Main {
         Karol.firstName = "Karol";
         Karol.lastName = "Kowalski";
 
+        Dawid.cash = 100000.00;
+        Karol.cash = 50000.00;
+
+        Petrol mazda = new Petrol("Mazda", "RX-8", 2009, "Black");
+        LPG fiat = new LPG("Fiat", "Bravo", 2016, "Black");
+        Disel vw = new Disel("VW", "Passat", 2004, "Red");
+        Electric tesla = new Electric("Tesla", "S", 2020, "Blue");
+
+        Application youtube = new Application("YouTube", "12.3", 4000.0);
+        Application facebook = new Application("FaceBook", "3.2", 0.0);
+        Application gmail = new Application("Gmail", "1.0", 100.00);
+
+
+        System.out.println(Dawid.cash);
+        iPhone.installAnApp(Dawid, youtube);
+        iPhone.installAnApp(Dawid, gmail);
+        iPhone.installAnApp(Dawid, facebook);
+        System.out.println(Dawid.cash);
+        iPhone.allInstalledApp();
+
+        /*
+
+
         mazda.value = 30000.00;
         tesla.value = 150000.00;
         fiat.value = 50000.00;
         vw.value = 10.00;
 
 
-        Dawid.cash = 100000.00;
-        Karol.cash = 50000.00;
+
 
         System.out.println("Dawid ma: " + Dawid.cash + " pln");
         System.out.println("Karol ma: " + Karol.cash + " pln");
@@ -101,13 +120,12 @@ public class Main {
         System.out.println(" ");
         Karol.sortCars();
         Karol.carList();
-
+*/
 
 
 
         /*
-        Phone iPhone = new Phone("Apple", "iPhone 11", 2020, "Black", 8, 64);
-        Phone siajomi = new Phone("Xiaomi", "MI 9 T", 2018, "Blue", 4, 64);
+
 
         System.out.println(iPhone);
 
@@ -195,10 +213,4 @@ public class Main {
 
 */
     }
-
-
-
-
-
-
-    }
+}
